@@ -14,9 +14,14 @@ const io = initializeSocket(server);
 app.set('io', io);
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true
-  }));
+  origin: [
+    'https://elite-events-cyan.vercel.app',
+    'http://elite-events-cyan.vercel.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+}));
+
   app.use(express.json());
   
 
