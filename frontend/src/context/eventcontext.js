@@ -14,7 +14,13 @@ export const EventProvider = ({ children }) => {
   const [unsubevents, setunsubevents] = useState([]);
   const [loading, setLoading] = useState(false);
   const { user } =useUser();
-  const socket = io(process.env.REACT_APP_BACKEND_URI);
+  const socket = io(process.env.REACT_APP_BACKEND_URI, {
+    withCredentials: true,
+    transports: ['websocket', 'polling'],
+    reconnection: true,
+    reconnectionAttempts: 5,
+    reconnectionDelay: 1000
+  });
   const fetchEvents = async () => {
     setLoading(true);
     try {

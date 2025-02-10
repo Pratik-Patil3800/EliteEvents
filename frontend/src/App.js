@@ -29,9 +29,9 @@ function App() {
           ):(
            
             <>
-              <Route path="/calendar" element={< Login />} />
-              <Route path="/profile" element={< Login />} />
-              <Route path="/" element={< Login />} />
+              <Route path="/calendar" element={< NotificationsPage />} />
+              <Route path="/profile" element={< NotificationsPage />} />
+              <Route path="/" element={< NotificationsPage />} />
             </>
         )}
         </Routes>
