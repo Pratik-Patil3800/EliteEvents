@@ -113,7 +113,6 @@
         return res.json({ message: 'Event deleted successfully' });
       }
       else{
-        //check in attendees , if user remove from attendees
         const index = event.attendees.indexOf(req.user._id);
         if(index > -1){
           event.attendees.splice(index, 1);
